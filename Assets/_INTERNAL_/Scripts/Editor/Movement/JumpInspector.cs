@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEditor;
 
 [CanEditMultipleObjects]
-//[CustomEditor(typeof(Jump))]
+[CustomEditor(typeof(Jump))]
 public class JumpInspector : InspectorBase
 {
 	private string explanation = "Makes the GameObject jump at the press of a button.";
