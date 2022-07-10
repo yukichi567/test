@@ -24,6 +24,7 @@ public class NewPlayer : MonoBehaviour
     {
         Renderer = GetComponent<SpriteRenderer>();
         rbody2D = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
@@ -62,6 +63,8 @@ public class NewPlayer : MonoBehaviour
         {
             jumpCount = 0;
         }
+
+
     }
     //private void OnCollisionEnter2D(Collision2D other)
     //{

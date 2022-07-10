@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Player_Damage : MonoBehaviour
 {
     [SerializeField] Image _Life;
-    [SerializeField] int _Hp = 3;
+    [SerializeField] public int _Hp = 3;
     [SerializeField] Image _BackGround;
     [SerializeField] Image _GameOver;
     [SerializeField] Text _time;
@@ -26,6 +26,7 @@ public class Player_Damage : MonoBehaviour
     {
         RM = GameObject.Find("Rock_Marker");
         PM = GameObject.Find("marimo");
+        Debug.Log(_Hp);
     }
 
     // Update is called once per frame

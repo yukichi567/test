@@ -83,7 +83,7 @@ public class Boss : MonoBehaviour
 
         if (collision.gameObject.tag == ("Bom"))
         {
-            _Hp -= 10;
+            _Hp -= 100;
         }
 
     }
