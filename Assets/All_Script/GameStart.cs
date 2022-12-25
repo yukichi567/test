@@ -12,7 +12,7 @@ public class GameStart : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1"))
         {
-            SceneManager.LoadScene("stage1");
+            SceneManager.LoadScene("stage2");
         }
     }
 }
