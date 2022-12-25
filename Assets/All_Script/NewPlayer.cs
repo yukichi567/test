@@ -8,30 +8,26 @@ public class NewPlayer : MonoBehaviour
     //移動速度
     [SerializeField] public float speed = 0f;
     private SpriteRenderer Renderer;
-    private Rigidbody2D rbody2D;
+    private Rigidbody2D _rb;
     //2Dジャンプ
     [SerializeField] public float jumpForce = 0f;
     [SerializeField] private int jumpCount = 0;
 
     /// <summary>入力に応じて左右を反転させるかどうかのフラグ</summary>
-    [SerializeField] bool m_flipX = false;
-    Rigidbody2D m_rb = default;
-    SpriteRenderer m_sprite = default;
+    [SerializeField] bool _flipX = false;
     [SerializeField] int hp = 5;
 
     private string enemyTag = "Enemy";
     void Start()
     {
         Renderer = GetComponent<SpriteRenderer>();
-        rbody2D = GetComponent<Rigidbody2D>();
-
+       _rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Vector2 position = transform.position;
-
 
         if (Input.GetKey(KeyCode.A))
         {
@@ -46,9 +42,9 @@ public class NewPlayer : MonoBehaviour
         }
         transform.position = position;
 
-        if (Input.GetKey(KeyCode.W) && this.jumpCount < 1)
+        if (Input.GetKey(KeyCode.Space) && this.jumpCount < 2)
         {
-            this.rbody2D.AddForce(transform.up * jumpForce);
+            this._rb.AddForce(transform.up * jumpForce);
             jumpCount++;
         }
     }
@@ -63,17 +59,5 @@ public class NewPlayer : MonoBehaviour
         {
             jumpCount = 0;
         }
-
-
     }
-    //private void OnCollisionEnter2D(Collision2D other)
-    //{
-    //    if (other.gameObject.CompareTag("Floor"))
-    //    {
-    //        jumpCount = 0;
-    //    }
-
-    //}
-
-
 }

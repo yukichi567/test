@@ -11,23 +11,21 @@ public class kameme : MonoBehaviour
     [SerializeField] Vector2 _lineForWall = Vector2.right;
     /// <summary>壁のレイヤー（レイヤーはオブジェクトに設定されている）</summary>
     [SerializeField] LayerMask _wallLayer = 0;
-    /// <summary>床を検出するための line のオフセット</summary>
-    [SerializeField] Vector2 _lineForGround = new Vector2(1f, -1f);
-    /// <summary>床のレイヤー</summary>
-    [SerializeField] LayerMask _groundLayer = 0;
-    /// <summary>移動方向</summary>
-    Vector2 _moveDirection = Vector2.right;
+    ///// <summary>床を検出するための line のオフセット</summary>
+    //[SerializeField] Vector2 _lineForGround = new Vector2(1f, -1f);
+    ///// <summary>床のレイヤー</summary>
+    //[SerializeField] LayerMask _groundLayer = 0;
+    ///// <summary>移動方向</summary>
+    //Vector2 _moveDirection = Vector2.right;
     Rigidbody2D _rb = default;
     bool _wall = true;
     Vector2 _Line = new Vector2(5f, 0f);
     [SerializeField] float _tagetarea = 0.1f;
     GameObject PlayerObject;
     Vector2 PlayeyPosition;
-    Rigidbody2D rb;
     Vector2 EnemyPosotion;
-    CircleCollider2D rc;
     float m_h;
-    float m_scaleX;
+    //float m_scaleX;
     [SerializeField] bool m_flipX = false;
 
     void Start()
@@ -50,9 +48,6 @@ public class kameme : MonoBehaviour
         {
             EnemyPosotion.x = EnemyPosotion.x + 0.03f;
         }
-
-
-
     }
     void Move()
     {
